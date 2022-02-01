@@ -6,12 +6,12 @@ include_once 'utils/favoriten.php';
 
 if ($_POST['login']) {
     $email = $_POST['email'];
-    $pass = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $pass = $_POST['password'];
 
     $fav = new Favoriten();
-    $user = $fav->login($email, $pass);
+    $user = $fav->login($email);
 
-    if (isset($user) && isset($user['id'])) {
+    if (isset($user) && isset($user['id']) && password_verify($pass, $user['passwort'])) {
         $_SESSION['loggedin'] = true;
         $_SESSION['email'] = $user['email'];
         $_SESSION['name'] = $user['name'];
