@@ -34,8 +34,8 @@ class Favoriten {
 
 class DbConnection{
 
-    private $server = '';
-    private $port = '';
+    private $server = 'localhost';
+    private $port = '3306';
     private $db = '';
     private $user = '';
     private $pass = '';
