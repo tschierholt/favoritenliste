@@ -18,5 +18,6 @@ if(!$_SESSION['loggedin']){
     <body>
         <h1><?php echo $_SESSION['name'] ?></h1>
         <h3>Mein Listen</h3>
+        
     </body>
 </html>
